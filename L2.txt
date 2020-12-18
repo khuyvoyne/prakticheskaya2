@@ -1,0 +1,180 @@
+
+#include <iostream>
+#include <ctime>
+#include <chrono>
+
+#include <algorithm>
+#include <numeric>
+
+//#include <iomanip>
+
+
+using namespace std;
+using namespace chrono;
+
+
+void bubbleSort(int a[])
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10 - i - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				//swap(a[j] , a[j+1]);
+				int temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+
+			}
+		}
+	}
+}
+
+
+
+
+void sort()
+{
+	const int SIZE = 10;
+	int N[SIZE], min, max, midle;
+
+
+
+	srand(time(NULL)); // инициализация генерации случайных чисел
+
+
+	cout << endl;
+
+	for (int i = 0; i < 10; i++)
+	{
+		N[i] = (rand() % 100 - 35);
+	}
+
+	cout << "Before Sorting: " << " ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << N[i] << " ";
+	}
+
+	cout << endl;
+	cout << endl;
+
+	bubbleSort(N);
+
+
+	cout << "After Sorting: " << " ";
+	for (int i = 0; i < 10; i++)
+	{
+		cout << N[i] << " ";
+	}
+
+	system_clock::time_point start = system_clock::now();
+
+	cout << "\n";
+
+	system_clock::time_point end = system_clock::now();
+	duration<double> sec = end - start;
+
+	cout << endl;
+
+	
+
+	cout << "seconds: " << sec.count() << endl;
+	/*
+	cout << "Task 3" << endl;
+	N[SIZE];
+	int size1 = sizeof(N[SIZE] / sizeof(int));
+	int summ = accumulate(&N[0], &N[size1], 0);
+	int mean = summ / size1;
+	
+	cout << mean << endl;
+	for (int i = 0; i < size1; i++)
+	{
+		cout << N[i] << " ";
+	}
+	*/
+	/*
+	int a1[5];
+	for (int i = 0; i < 5; i++)
+	{
+		if (a1[i] == N[i]);
+	}
+
+	cout << endl;
+
+	int b1[5];
+	for (int i = 0; i < 5; i++)
+	{
+		if (b1[i] == N[i+1]) 
+	}
+	*/
+
+	cout << endl;
+	cout << endl;
+
+	int a;
+	cout << "Insert the number: " << " ";
+	cin >> a;
+	cout << "less than a : " << " ";
+	for (int i = 0; i < 10; ++i)
+	{
+		if (a < N[i]) { cout << N[i] << " "; }
+	}
+
+	cout << endl;
+	cout << endl;
+
+	int b;
+	cout << "Insert the number: " << " ";
+	cin >> b;
+	cout << "number more a : " << " ";
+	for (int i = 0; i < 10; ++i)
+	{
+		if (b > N[i]) { cout << N[i] << " "; }
+	}
+
+	cout << endl;
+	cout << endl;	
+
+	
+
+	
+	cout << endl;
+	cout << "-----------------------------------------------------" << endl;
+
+	min = N[0];
+	max = N[0];
+
+	for (int i = 1; i < SIZE; i++)
+	{
+		if (N[i] < min) { min = N[i]; }
+		if (N[i] > max) { max = N[i]; }
+	}
+
+	midle = N[0];
+	for (int i = 1; i < SIZE; i++)
+	{
+		if (N[i] = max / min) { midle = N[i]; }
+	}
+
+
+	cout << "Min: " << min << endl;
+	cout << "Max: " << max << endl;
+	cout << "Midle: " << midle << endl;
+
+	cout << endl;
+
+
+
+	//cout << "Number a: " << a << endl;
+
+	cout << endl;
+
+}
+
+int main()
+{
+	sort();
+	system("pause");
+}
